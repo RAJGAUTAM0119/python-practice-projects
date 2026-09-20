@@ -1,15 +1,16 @@
+# Enter the row size for the pattern: 5
+#         A 
+#       A B A 
+#     A B C B A 
+#   A B C D C B A 
+# A B C D E D C B A 
+
 rows = 5
-ascii_value = 65
-
-for i in range(rows):
-    letter = chr(ascii_value + i)
-    for j in range(i + 1):
-        print(letter, end=" ")
-    print()
-
-# Even better version no need of inner loop
-rows = 5
-
-for i in range(rows):
-    letter = chr(65 + i)
-    print((letter + " ") * (i + 1))
+for i in range(1,rows+1):
+  for j in range(rows-i):
+    print(" ",end=" ")
+  for k in range(1,i+1):
+    print(chr(64 + k),end=" ")
+  for l in range(i - 1, 0, -1):
+    print(chr(64 + l), end=" ")
+  print()
